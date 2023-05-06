@@ -41,7 +41,7 @@ const DogPictures = () => {
         fetch("https://dog.ceo/api/bulldog/french/images")
             .then((res) => res.json())
             .then((json) => {
-                setPictures(json.images);
+                setPictures(json.message);
                 setIsDataLoaded(true);
             });
     }, []);
@@ -56,7 +56,7 @@ const DogPictures = () => {
         <div className="facts">
             <p>These are Dogs</p>
             {pictures.map((item) => (
-                <img src={item.url} alt={`Dog picture`} width="300px"/>
+                <img src={item} alt={`Dog picture`} width="300px"/>
             ))}
         </div>
     );
