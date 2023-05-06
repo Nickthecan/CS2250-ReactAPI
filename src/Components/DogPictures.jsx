@@ -38,7 +38,7 @@ const DogPictures = () => {
     const [isDataLoaded, setIsDataLoaded] = React.useState(false);
   
     React.useEffect(() => {
-        fetch("https://dog.ceo/api/bulldog/french/images")
+        fetch("https://dog.ceo/api/breed/bulldog/french/images")
             .then((res) => res.json())
             .then((json) => {
                 setPictures(json.message);
@@ -56,7 +56,7 @@ const DogPictures = () => {
         <div className="facts">
             <p>These are Dogs</p>
             {pictures.map((item) => (
-                <img src={item} alt={`Dog picture`} width="300px"/>
+                <img src={item} alt="Dogpicture" width="300px"/>
             ))}
         </div>
     );
